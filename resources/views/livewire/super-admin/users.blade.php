@@ -29,10 +29,8 @@
                                         <x-default-input type="text" nama="name" title="Pencarian"/>
                                     </div>
                                     <div class="text-right">
-                                        <x-jet-button class="">
-                                            {{--                                            <x-spinner wire:target="save"/>--}}
-                                            find
-                                        </x-jet-button>
+                                        @livewire('super-admin.users.add',key('user-add'))
+{{--                                        @livewire('super-admin.users.roles',key('user-roles'))--}}
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +55,7 @@
                                     <tbody class="flex-1 sm:flex-none">
                                     @foreach($table as $key => $item)
                                         <tr class="flex flex-col flex-no wrap sm:table-row text-xs mb-2 sm:mb-0 bg-white">
-                                            <td class="border-grey-light h-15 hover:bg-gray-100 p-3">{{$key+1}}</td>
+                                            <td class="border-grey-light h-15 hover:bg-gray-100 p-3">{{$table->firstItem()+$key}}</td>
                                             <td class="border-grey-light border-t-2 h-15 hover:bg-gray-100 p-3 truncate">
                                                 <div class="flex items-center">
                                                     <div class="flex-shrink-0">
@@ -108,31 +106,19 @@
         </div>
     </div>
     @if($user_id)
-    <x-jet-dialog-modal wire:model="editable">
-        <x-slot name="title">
-            {{ __('Edit User :') }} {{\App\Models\User::find($user_id)->name}}
-        </x-slot>
-        <x-slot name="content">
+        <x-jet-dialog-modal wire:model="editable">
+            <x-slot name="title">
+                {{ __('Edit User :') }} {{\App\Models\User::find($user_id)->name}}
+            </x-slot>
+            <x-slot name="content">
                 @livewire('default-component.profile',['user_id'=>$user_id],key('user-profile-'.$user_id))
-        </x-slot>
+            </x-slot>
 
-        <x-slot name="footer">
+            <x-slot name="footer">
 
-        </x-slot>
-    </x-jet-dialog-modal>
+            </x-slot>
+        </x-jet-dialog-modal>
     @endif
-    <x-jet-dialog-modal wire:model="add">
-        <x-slot name="title">
-            {{ __('Add User :') }}
-        </x-slot>
-        <x-slot name="content">
-            @livewire('default-component.profile',['user_id'=>$user_id],key('user-profile-'.$user_id))
-        </x-slot>
-
-        <x-slot name="footer">
-
-        </x-slot>
-    </x-jet-dialog-modal>
 
     <style>
         html,

@@ -19,11 +19,10 @@ class Users extends Component
     // modal add
     public $add = false;
 
+    protected $listeners = [
+        'refresh' => 'render'
+    ];
 
-    public function __construct($id = null)
-    {
-        parent::__construct($id);
-    }
 
     public function setUserId($user_id)
     {

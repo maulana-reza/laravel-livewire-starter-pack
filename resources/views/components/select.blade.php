@@ -8,12 +8,12 @@
                     display: none;
                 }
             </style>
-            {!! Form::select('',$option,'',['class' => 'w-full rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50','multiple' => true,'x-cloak','id'=>'select-'.$ids]) !!}
+            {!! Form::select('',$option,'',['class' => 'hidden ','multiple' => true,'x-cloak','id'=>'select-'.$ids]) !!}
             <div x-data="dropdown('{{$ids}}','{{$value}}')" x-init="loadOptions()"
                  class="w-full md:w-full flex flex-col items-center mx-auto">
                 <input type="hidden" wire:model="{{$name}}" name="{{$name}}" id="select-value-{{$ids}}" value="$value">
                 <div class="inline-block relative w-full">
-                    <div class="flex flex-col items-center relative">
+                    <div clasess="flex flex-col items-center relative">
                         <div x-on:click="open" class="w-full  svelte-1l8159u">
                             <div class="my-2 p-1 flex border border-gray-200 bg-white rounded svelte-1l8159u">
                                 <div class="flex flex-auto flex-wrap">
@@ -37,6 +37,7 @@
                                     </template>
                                     <div x-show="selected.length == 0" class="flex-1">
                                         <input placeholder="Select a option"
+                                               x-on:change="search()"
                                                class="bg-transparent p-1 px-2 appearance-none outline-none h-full w-full text-gray-800"
                                                x-bind:value="selectedValues()">
                                     </div>
