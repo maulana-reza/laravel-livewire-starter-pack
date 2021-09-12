@@ -1,11 +1,11 @@
-<div>
+<div class="">
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Users') }}
         </h2>
     </x-slot>
     <div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 ">
+        <div class="mx-auto sm:px-6 lg:px-8 ">
             <div class="hidden sm:block" aria-hidden="true">
                 <div class="py-5">
                     <div class="border-t border-gray-200"></div>
@@ -30,7 +30,8 @@
                                     </div>
                                     <div class="text-right">
                                         @livewire('super-admin.users.add',key('user-add'))
-{{--                                        @livewire('super-admin.users.roles',key('user-roles'))--}}
+                                        @livewire('super-admin.users.edit',key('user-edit'))
+                                        {{--                                        @livewire('super-admin.users.roles',key('user-roles'))--}}
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +78,7 @@
                                             <td class="border-grey-light border-t-2 h-15 hover:bg-gray-100 p-3 truncate">
                                                 <button onclick="confirm('Apakah anda yakin mereset password : {{$item->name}}') && @this.resetPassword({{$item->id}})">Reset Password</button>
                                                 |
-                                                <button wire:click="setUserId({{$item->id}})">Edit</button>
+                                                <button wire:click="$emit('editUser',{{$item->id}})">Edit</button>
                                                 |
                                                 <button
                                                     onclick="confirm('Apakah anda yakin menghapus: {{$item->name}}') && @this.removeUser({{$item->id}})">
