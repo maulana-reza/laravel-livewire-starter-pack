@@ -29,8 +29,10 @@
                 {{ $header }}
             </div>
         </header>
-@endif
-<!-- Page Content -->
+    @endif
+    @if(session()->get('success'))
+        <x-jet-banner style="success" :message="session()->get('success')"/>
+    @endif
     <main>
         <div class="max-w-7xl mx-auto">
 

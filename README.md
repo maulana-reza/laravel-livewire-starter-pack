@@ -60,3 +60,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Requirement
+- `php versi 7.4`
+- `composer`
+- `node` opsional
+### OS Window
+
+- `xampp`
+- `terminal (cmd)`
+- `text editor bebas`
+
+
+## Instalation
+
+- install composer dengan menjalankan script ``composer install`` di terminal
+- atur database pada `.env` jika tidak ada file `.env` buat file nya copy dari `.env.example`
+- jalankan perintah `php artisan key:generate` untuk set key pada project laravel
+- jalankan perintah `php artisan migrate` untuk migrasi database
+- jalankan perintah `php artisan db:seed --class=InitSeeder` untuk data dummy
+- jalankan perintah `php artisan serve` untuk menjalan project laravel pada server local

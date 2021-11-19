@@ -44,7 +44,7 @@ class Users extends Component
 
     public function mount(UserRepository $user)
     {
-        $this->user = $user;
+//        $this->user = $user;
     }
 
     public function resetPassword(UserRepository $user, $user_id)

@@ -10,16 +10,18 @@ class DefaultInput extends Component
     public $nama;
     public $type;
     public $title;
+    public $readonly = false;
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($nama,$type,$title)
+    public function __construct($nama,$type,$title,$readonly = false)
     {
         $this->nama = $nama;
         $this->type = $type;
         $this->title = $title;
+        $this->readonly = $readonly;
         //
     }
 

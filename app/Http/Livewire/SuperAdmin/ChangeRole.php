@@ -18,12 +18,10 @@ class ChangeRole extends Component
 
         $user = User::find($this->user_id);
         if ($user) {
-
             $user->syncRoles(explode(',',$this->role));
             $this->emit('alert', ['tipe' => 'success', 'body' => 'Hak akses berhasil diubah.']);
         } else {
             $this->emit('alert', ['tipe' => 'warning', 'body' => 'User tidak ditemukan.']);
-
         }
 
     }

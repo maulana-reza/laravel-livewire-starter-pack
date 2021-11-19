@@ -21,9 +21,9 @@ class InitSeeder extends Seeder
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
         // Create Role
+        $pustakawan = Role::updateOrCreate(['name' => 'pustakawan']);
         $general = Role::updateOrCreate(['name' => 'general']);
         $superadmin = Role::updateOrCreate(['name' => 'super-admin']);
-
 
         $user = \App\Models\User::updateOrcreate([
             'email' => 'superadmin@gmail.com'], [
@@ -34,12 +34,21 @@ class InitSeeder extends Seeder
         ]);
         $user->assignRole($superadmin);
         $user = \App\Models\User::updateOrCreate([
+            'email' => 'pustakawan@gmail.com'], [
+            'name' => 'Pustakawan',
+            'email' => 'pustakawan@gmail.com',
+            'email_verified_at' => Carbon::now(),
+            'password' => Hash::make('password'),
+        ]);
+        $user->assignRole($pustakawan);
+        $user = \App\Models\User::updateOrCreate([
             'email' => 'general@gmail.com'], [
-            'name' => 'General User',
+            'name' => 'Pustakawan',
             'email' => 'general@gmail.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('password'),
         ]);
         $user->assignRole($general);
+        $this->call(IndoRegionSeeder::class);
     }
 }
