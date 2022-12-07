@@ -16,6 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
         require('postcss-import'),
         require('tailwindcss'),
     ]);
+mix.copy('node_modules/flowbite/dist','public/flowbite')
+
 
 if (mix.inProduction()) {
     mix.version();

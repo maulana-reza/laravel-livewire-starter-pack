@@ -21,6 +21,7 @@
         "tailwindcss": "^2.0.1"
     },
     "dependencies": {
+        "flowbite": "^1.5.4",
         "jquery": "^3.6.0"
     }
 }

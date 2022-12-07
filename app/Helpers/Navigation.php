@@ -35,4 +35,25 @@ class Navigation
         }
         return $result;
     }
+    static public function getSubActive($key)
+    {
+        foreach (self::get() as $k => $item) {
+            if (is_array($item)) {
+                if (array_key_exists($key, $item)) {
+                    return [ucwords($k), ucwords($item[$key])];
+                }
+            }
+        }
+    }
+
+    static public function checkSubActive($key, $route)
+    {
+        return array_key_exists($route, self::get()[$key]);
+    }
+
+    static public function pathNavigation()
+    {
+        $key = \Illuminate\Support\Facades\Route::currentRouteName();
+        return @self::get()[$key] ? [self::get()[$key]] : self::getSubActive($key);
+    }
 }

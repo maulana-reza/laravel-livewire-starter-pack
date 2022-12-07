@@ -1,4 +1,10 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/flowbite/datepicker.js": "/flowbite/datepicker.js",
+    "/flowbite/datepicker.js.map": "/flowbite/datepicker.js.map",
+    "/flowbite/flowbite.css": "/flowbite/flowbite.css",
+    "/flowbite/flowbite.js": "/flowbite/flowbite.js",
+    "/flowbite/flowbite.js.map": "/flowbite/flowbite.js.map",
+    "/flowbite/flowbite.min.css": "/flowbite/flowbite.min.css"
 }

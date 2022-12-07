@@ -41,15 +41,14 @@
                                     class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg sm:shadow-lg my-5">
                                     <thead class="">
                                     @foreach($table as $item)
-                                        <tr class="bg-gray-700 flex flex-col flex-no wrap sm:table-row text-xs rounded-l-lg sm:rounded-none mb-2 sm:mb-0 text-white">
+                                        <tr class="bg-gray-700 flex flex-col flex-no wrap sm:table-row text-xs rounded-l-lg  sm:rounded-none mb-2 sm:mb-0 text-white">
                                             <th class="p-3 text-left  h-15 ">No</th>
-                                            <th class="p-3 text-left  h-15">
-                                                <div class="h-10">Nama</div>
+                                            <th class="p-3 text-left ">
+                                                <span class=" align-middle">Nama</span>
                                             </th>
-                                            <th class="p-3 text-left  h-15">
-                                                <div class="h-14">Role</div>
+                                            <th class="p-3 text-left py-8"><span class="inline-block align-middle">Role</span>
                                             </th>
-                                            <th class="p-3 text-left  h-15">Aksi</th>
+                                            <th class="p-3 text-left h-15">Aksi</th>
                                         </tr>
                                     @endforeach
                                     </thead>
